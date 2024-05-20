@@ -2,7 +2,7 @@ name: Check Pull Request Quality
 on: pull_request
 jobs:
   check-pr-title:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
     - name: Check PR title
       env:
