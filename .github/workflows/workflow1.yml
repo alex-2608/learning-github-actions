@@ -1,18 +1,17 @@
-name: Deployment Exercise 1
-on: push
+name: Check Pull Request Quality
+on: pull_request
 jobs:
-  deploy:
-    runs-on: ubuntu-lastest
+  check-pr-title:
+    runs-on: ubuntu-latest
     steps:
-        - name: Get Code
-          uses: actions/checkout@v3
-        - name: install deps
-          run: npm ci
-        - name: run lint
-          run: npm run lint
-        - name: test code
-          run: npm run test
-        - name: build
-          run: npm run build
-        - name: deploye
-          run: echo "deploying ...1..."
+    - name: Check PR title
+      env:
+        TITLE: ${{ github.event.pull_request.title }}
+      run: |
+        if [[ "$TITLE" =~ ^feat ]]; then
+        echo "PR title starts with 'feat'"
+        exit 0
+        else
+        echo "PR title did not start with 'feat'..."
+        exit 1
+        fi
