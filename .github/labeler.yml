@@ -1,0 +1,33 @@
+# .github/labeler.yml
+
+# Label changes to SQLX definitions
+"sqlx-definitions":
+  - "definitions/**/*.sqlx"
+
+"changes-in-dwh":
+  - "definitions/dwh/**.sql"
+
+"changes-in-int":
+  - "definitions/intermediate/**.sql"
+
+"changes-in-stg":
+  - "definitions/staging/**.sql"
+
+
+
+# Label changes to SQLX assertions
+"sqlx-assertions":
+  - "assertions/**/*.sqlx"
+
+# Label changes to documentation
+"documentation":
+  - "docs/**/*.md"
+
+# Label changes to any test files
+"tests":
+  - "tests/**/*.sqlx"
+  - "tests/**/*.js"
+
+# Label changes to workflows
+"ci-cd":
+  - ".github/workflows/**/*.yml"
