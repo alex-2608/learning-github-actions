@@ -1,12 +1,14 @@
-# .github/labeler.yml
+
+root:
+- changed-files:
+  - any-glob-to-any-file: '*'
 
 # Label changes to SQLX definitions
-sqlx-definitions:
+sqlxdefinitions:
 - changed-files:
   - any-glob-to-any-file: definitions/**/*.sql
 
-
-changes-in-dwh"
+changes-in-dwh
 - changed-files:
   - any-glob-to-any-file: definitions/dwh/**.sql
 
