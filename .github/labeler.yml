@@ -2,7 +2,7 @@
 
 # Label changes to SQLX definitions
 "sqlx-definitions":
-  - "definitions/**/*.sqlx"
+  - "definitions/**/*.sql"
 
 "changes-in-dwh":
   - "definitions/dwh/**.sql"
