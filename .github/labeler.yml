@@ -20,6 +20,6 @@ changes-in-stg:
 - changed-files:
   - any-glob-to-any-file: definitions/staging/**.sql
 
-ci-cd:
+ci-cd: 
 - changed-files:
   - any-glob-to-any-file: .github/workflows/**/*.yml
