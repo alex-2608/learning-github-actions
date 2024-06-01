@@ -9,7 +9,7 @@ jobs:
         TITLE: ${{ github.event.pull_request.title }}
       run: |
         if [[ "$TITLE" =~ ^feat ]]; then
-        echo "PR title starts with 'feat'"
+        echo "Your PR title ($TITLE) starts with 'feat'"
         exit 0
         else
         echo "PR title did not start with 'feat'..."

@@ -13,8 +13,6 @@
 "changes-in-stg":
   - "definitions/staging/**.sql"
 
-
-
 # Label changes to SQLX assertions
 "sqlx-assertions":
   - "assertions/**/*.sqlx"
