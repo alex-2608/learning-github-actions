@@ -16,7 +16,7 @@ jobs:
         exit 1
         fi
     - name: Check Description
-      env:
+      env: 
         DESCRIPTION: ${{ github.event.pull_request.body }}
       run: |
         if [ ${#DESCRIPTION} == 0]; then
