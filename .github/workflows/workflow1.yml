@@ -1,7 +1,7 @@
 name: Check Pull Request Quality
 on: pull_request
 jobs:
-  check-pull-request:
+  check-pull-request: 
     runs-on: ubuntu-latest
     steps:
     - name: Check title
@@ -18,10 +18,11 @@ jobs:
     - name: Check Description
       env:
         DESCRIPTION: ${{ github.event.pull_request.body }}
-      run: if [ ${#DESCRIPTION} == 0]; then
-           echo "No description provided. Please add one. (${#DESCRIPTION})"
-           exit 0
-           else 
-           echo "Description check passed."
-           exit 1
-           fi
+      run: |
+        if [ ${#DESCRIPTION} == 0]; then
+        echo "No description provided. Please add one. (${#DESCRIPTION})"
+        exit 0
+        else 
+        echo "Description check passed."
+        exit 1
+        fi
