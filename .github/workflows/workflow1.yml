@@ -16,13 +16,13 @@ jobs:
         exit 1
         fi
     - name: Check Description
-      env:
+      env: 
         DESCRIPTION: ${{ github.event.pull_request.body }}
       run: |
-        if [ ${#DESCRIPTION} == 0]; then
+        if [[ ${#DESCRIPTION} == 0 ]]; then
         echo "No description provided. Please add one. (${#DESCRIPTION})"
-        exit 0
+        exit 1
         else 
         echo "Description check passed."
-        exit 1
+        exit 0
         fi
