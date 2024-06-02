@@ -1,5 +1,7 @@
 name: Check Pull Request Quality
-on: pull_request
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
 jobs:
   check-pull-request: 
     runs-on: ubuntu-latest
@@ -15,7 +17,7 @@ jobs:
         echo "PR title did not start with 'feat'..."
         exit 1
         fi
-    - name: Check Description
+    - name: Check Description 
       env: 
         DESCRIPTION: ${{ github.event.pull_request.body }}
       run: |
