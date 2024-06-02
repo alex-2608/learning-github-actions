@@ -18,4 +18,10 @@ jobs:
     - name: Check Description
       env:
         DESCRIPTION: ${{ github.event.pull_request.body }}
-      run: echo $DESCRIPTION
+      run: if [ ${#DESCRIPTION} == 0]; then
+           echo "No description provided. Please add one. (${#DESCRIPTION})"
+           exit 0
+           else 
+           echo "Description check passed."
+           exit 1
+           fi
