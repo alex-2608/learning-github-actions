@@ -1,10 +1,10 @@
 name: Check Pull Request Quality
 on: pull_request
 jobs:
-  check-pr-title:
+  check-pull-request:
     runs-on: ubuntu-latest
     steps:
-    - name: Check PR title
+    - name: Check title
       env:
         TITLE: ${{ github.event.pull_request.title }}
       run: |
@@ -15,7 +15,13 @@ jobs:
         echo "PR title did not start with 'feat'..."
         exit 1
         fi
-    - name: Check PR Description
+    - name: Check Description
       env:
         DESCRIPTION: ${{ github.event.pull_request.body }}
-      run: echo $DESCRIPTION
+      run: if [ ${#DESCRIPTION} == 0]; then
+           echo "No description provided. Please add one. (${#DESCRIPTION})"
+           exit 0
+           else 
+           echo "Description check passed."
+           exit 1
+           fi
